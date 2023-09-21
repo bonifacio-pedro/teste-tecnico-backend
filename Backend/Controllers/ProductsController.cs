@@ -57,6 +57,29 @@ public class ProductsController: ControllerBase
         return Ok(product);
     }
 
+    /*
+    Este método será utilizado para fazer pesquisas a partir de uma barra de pesquisa
+    com o nome do produto
+    */
+    [HttpPost("search")]
+    public ActionResult<IEnumerable<Product>> GetSearchProducts([FromBody] Product name) 
+    {
+        // Fazemos uma pequena validação
+        if (name.Name is null) return BadRequest("Envie um nome válido");
+
+        // Procuramos com o método "startsWith" o produto
+        var products = from b in _con.Products
+                        where b.Name.StartsWith(name.Name)
+                        select b;
+
+        // Outra validação
+        if (products is null) return NotFound("Nenhum produto encontrado com este nome");
+
+        // Log
+        Log.Information($"Uma pesquisa: {name.Name}, foi feita");
+
+        return Ok(products);
+    }
     
     /*
     Neste método fazemos a inserção de um novo produto no banco de dados, sempre com

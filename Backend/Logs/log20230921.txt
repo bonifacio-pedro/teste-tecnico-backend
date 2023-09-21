@@ -1,0 +1,8 @@
+2023-09-21 13:01:58.981 -03:00 [INF] Um produto de nome: Bermuda ZAP foi buscado.
+2023-09-21 13:03:04.258 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 13:05:23.017 -03:00 [INF] Uma pesquisa: Ber, foi feita
+2023-09-21 13:05:28.302 -03:00 [INF] Uma pesquisa: B, foi feita
+2023-09-21 13:05:43.466 -03:00 [INF] Um produto de nome: Batata quente foi criado.
+2023-09-21 13:05:47.495 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 13:05:56.652 -03:00 [INF] Uma pesquisa: B, foi feita
+2023-09-21 13:06:01.707 -03:00 [INF] Uma pesquisa: Be, foi feita
