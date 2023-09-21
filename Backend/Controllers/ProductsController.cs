@@ -56,7 +56,7 @@ public class ProductsController: ControllerBase
         if (product is null) return NotFound("Nenhum produto encontrado");
 
         // Log
-        Log.Information($"Um produto de nome: {product.Name} foi buscado por {}.");
+        Log.Information($"Um produto de nome: {product.Name} foi buscado por.");
 
         return Ok(product);
     }
