@@ -2,7 +2,6 @@ using Backed.Models;
 using Backend.Context;
 using Backend.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Diagnostics.Internal;
 using Serilog;
 
 namespace Backend.Controllers;
