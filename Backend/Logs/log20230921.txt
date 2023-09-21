@@ -14,3 +14,15 @@
 2023-09-21 14:36:40.389 -03:00 [INF] Um usuário de nome: Admin gerou um token.
 2023-09-21 14:48:27.131 -03:00 [INF] Um usuário de nome: Admin gerou um token.
 2023-09-21 14:48:54.125 -03:00 [INF] Um produto de nome: Bermuda ZAP foi buscado.
+2023-09-21 16:35:52.164 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:39:17.629 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:39:19.626 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:39:19.627 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:11.445 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:12.177 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:14.803 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:14.806 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:29.720 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:42.720 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:42.720 -03:00 [INF] Todos os produtos buscados.
+2023-09-21 16:40:57.293 -03:00 [INF] Todos os produtos buscados.

@@ -38,6 +38,9 @@ string? conn = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(op => 
                                             op.UseSqlite(conn));
 
+// Habilitando o cors, segurança HTTPS
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -52,6 +55,13 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Configurando cors
+app.UseCors(o => o.AllowAnyOrigin()
+                  .WithOrigins("GET", "POST", "PUT", "DELETE")
+                  .AllowAnyHeader());
+
 app.MapControllers();
+
+Log.Information($"SERVER INICIADO");
 
 app.Run();
