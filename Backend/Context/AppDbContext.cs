@@ -1,5 +1,7 @@
+using Backed.Models;
 using Backend.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration.UserSecrets;
 
 namespace Backend.Context;
 
@@ -13,4 +15,5 @@ public class AppDbContext: DbContext
     { }
 
     public DbSet<Product> Products { get; set; }
+    public DbSet<UserAuth> UserAuths { get; set; }
 }

@@ -6,3 +6,11 @@
 2023-09-21 13:05:47.495 -03:00 [INF] Todos os produtos buscados.
 2023-09-21 13:05:56.652 -03:00 [INF] Uma pesquisa: B, foi feita
 2023-09-21 13:06:01.707 -03:00 [INF] Uma pesquisa: Be, foi feita
+2023-09-21 14:23:45.620 -03:00 [INF] Uma pesquisa: Be, foi feita
+2023-09-21 14:27:02.985 -03:00 [INF] Um usuário de nome: Admin2 se registrou.
+2023-09-21 14:27:11.354 -03:00 [INF] Um usuário de nome: Admin se registrou.
+2023-09-21 14:29:21.337 -03:00 [INF] Um usuário de nome: Admin gerou um token.
+2023-09-21 14:34:36.277 -03:00 [INF] Um usuário de nome: Admin gerou um token.
+2023-09-21 14:36:40.389 -03:00 [INF] Um usuário de nome: Admin gerou um token.
+2023-09-21 14:48:27.131 -03:00 [INF] Um usuário de nome: Admin gerou um token.
+2023-09-21 14:48:54.125 -03:00 [INF] Um produto de nome: Bermuda ZAP foi buscado.

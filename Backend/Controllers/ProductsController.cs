@@ -1,5 +1,6 @@
 using Backend.Context;
 using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -15,7 +16,7 @@ public class ProductsController: ControllerBase
     de banco de dados, fazendo a conexão de forma única e fluída.
     */
     private readonly AppDbContext _con;
-    public ProductsController(AppDbContext context)
+    public ProductsController(AppDbContext context,IConfiguration config)
     {
         _con = context;
     }
@@ -27,6 +28,8 @@ public class ProductsController: ControllerBase
     E fiz algumas verifacações.
     */
     [HttpGet]
+    // Este método todos os usuários podem ver, mesmo os não autenticados
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
     {
         var products = await _con.Products.ToListAsync();
@@ -44,6 +47,7 @@ public class ProductsController: ControllerBase
     Neste método retorno apenas um produto, pedindo o ProductID dele
     */
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<Product>> GetOneProduct([FromRoute] long id)
     {
         // Procuramos e fazemos uma validação.
@@ -52,7 +56,7 @@ public class ProductsController: ControllerBase
         if (product is null) return NotFound("Nenhum produto encontrado");
 
         // Log
-        Log.Information($"Um produto de nome: {product.Name} foi buscado.");
+        Log.Information($"Um produto de nome: {product.Name} foi buscado por {}.");
 
         return Ok(product);
     }
@@ -62,6 +66,7 @@ public class ProductsController: ControllerBase
     com o nome do produto
     */
     [HttpPost("search")]
+    [AllowAnonymous]
     public ActionResult<IEnumerable<Product>> GetSearchProducts([FromBody] Product name) 
     {
         // Fazemos uma pequena validação
@@ -69,7 +74,7 @@ public class ProductsController: ControllerBase
 
         // Procuramos com o método "startsWith" o produto
         var products = from b in _con.Products
-                        where b.Name.StartsWith(name.Name)
+                        where b.Name!.StartsWith(name.Name)
                         select b;
 
         // Outra validação
@@ -86,6 +91,8 @@ public class ProductsController: ControllerBase
     validações sendo feitas.
     */
     [HttpPost]
+    // Essa propriedade protege por autenticação o endpoint
+    [Authorize]
     public async Task<ActionResult> PostProduct([FromBody] Product product)
     {
         if (product is null) return BadRequest("Produto inválido para cadastro");
@@ -104,6 +111,7 @@ public class ProductsController: ControllerBase
     Método de Atualizar um produto, com validação e procura por ProductID
     */
     [HttpPut("{id}")]
+    [Authorize]
     public async Task<ActionResult> PutProduct([FromRoute] long id, [FromBody] Product product)
     {
         // Procuramos e fazemos uma validação.
@@ -130,6 +138,7 @@ public class ProductsController: ControllerBase
     Buscamos um produto por id e o deletamos do banco de dados.
     */
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<ActionResult> DeleteProduct([FromRoute] long id)
     {
         // Procura e validação
