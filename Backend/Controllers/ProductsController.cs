@@ -2,6 +2,7 @@ using Backend.Context;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace Backend.Controllers;
 
@@ -32,6 +33,9 @@ public class ProductsController: ControllerBase
 
         if (products is null) return NotFound("Nenhum produto encontrado");
 
+        // Log
+        Log.Information($"Todos os produtos buscados.");
+
         return Ok(products);
     }
 
@@ -46,6 +50,9 @@ public class ProductsController: ControllerBase
         var product = await _con.Products.FindAsync(id);
 
         if (product is null) return NotFound("Nenhum produto encontrado");
+
+        // Log
+        Log.Information($"Um produto de nome: {product.Name} foi buscado.");
 
         return Ok(product);
     }
@@ -62,6 +69,9 @@ public class ProductsController: ControllerBase
 
         _con.Products.Add(product);
         await _con.SaveChangesAsync();
+
+        // Log
+        Log.Information($"Um produto de nome: {product.Name} foi criado.");
 
         // Aqui envio a rota para ver o GET deste produto e o próprio produto registrado
         return Created($"/products/{product.ProductId}", product);
@@ -86,6 +96,9 @@ public class ProductsController: ControllerBase
         _con.Products.Update(find);
         await _con.SaveChangesAsync();
 
+        // Log
+        Log.Information($"Um produto de nome: {product.Name} foi atualizado.");
+
         return Ok(find);
     } 
 
@@ -99,6 +112,9 @@ public class ProductsController: ControllerBase
         // Procura e validação
         var product = await _con.Products.FindAsync(id);
         if (product is null) return NotFound("Produto não encontrado");
+
+        // Log
+        Log.Information($"Um produto de nome: {product.Name} foi deletado.");
 
         // Deletando produto
         _con.Products.Remove(product);

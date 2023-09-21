@@ -1,0 +1,1 @@
+2023-09-20 22:38:02.381 -03:00 [INF] Um produto de nome: Camisa XXL USADA buscado em: 20/09/2023 22:38:02

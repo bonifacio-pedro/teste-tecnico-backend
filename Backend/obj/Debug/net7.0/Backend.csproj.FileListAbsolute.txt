@@ -41,3 +41,12 @@ D:\Trabalho\Teste\Backend\obj\Debug\net7.0\refint\Backend.dll
 D:\Trabalho\Teste\Backend\obj\Debug\net7.0\Backend.pdb
 D:\Trabalho\Teste\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
 D:\Trabalho\Teste\Backend\obj\Debug\net7.0\ref\Backend.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.AspNetCore.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+D:\Trabalho\Teste\Backend\bin\Debug\net7.0\Serilog.Sinks.File.dll
