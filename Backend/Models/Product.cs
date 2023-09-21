@@ -13,8 +13,7 @@ public class Product
     Coloquei também data annotations para melhorar o código, o deixando mais visível, limpo
     e optimizado
     */
-    [Key]
-    public long ProductId { get; set; }
+    public int Id { get; set; }
     
     [Required]
     [StringLength(300)]

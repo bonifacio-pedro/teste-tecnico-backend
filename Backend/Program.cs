@@ -18,7 +18,7 @@ Log.Logger = new LoggerConfiguration()
 // Conexão com o banco
 string? conn = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(op => 
-                                            op.UseMySql(conn, ServerVersion.AutoDetect(conn)));
+                                            op.UseSqlite(conn));
 
 var app = builder.Build();
 

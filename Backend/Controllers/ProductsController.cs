@@ -47,7 +47,7 @@ public class ProductsController: ControllerBase
     public async Task<ActionResult<Product>> GetOneProduct([FromRoute] long id)
     {
         // Procuramos e fazemos uma validação.
-        var product = await _con.Products.FindAsync(id);
+        var product = await _con.Products.FindAsync(Convert.ToInt32(id));
 
         if (product is null) return NotFound("Nenhum produto encontrado");
 
@@ -74,7 +74,7 @@ public class ProductsController: ControllerBase
         Log.Information($"Um produto de nome: {product.Name} foi criado.");
 
         // Aqui envio a rota para ver o GET deste produto e o próprio produto registrado
-        return Created($"/products/{product.ProductId}", product);
+        return Created($"/products/{product.Id}", product);
     }
 
     /*
@@ -84,7 +84,7 @@ public class ProductsController: ControllerBase
     public async Task<ActionResult> PutProduct([FromRoute] long id, [FromBody] Product product)
     {
         // Procuramos e fazemos uma validação.
-        var find = await _con.Products.FindAsync(id);
+        var find = await _con.Products.FindAsync(Convert.ToInt32(id));
         if (find is null) return NotFound("Não encontramos nenhum produto com esse id");
         
         if (product is null) return BadRequest("Faça uma atualização válida");
@@ -110,7 +110,7 @@ public class ProductsController: ControllerBase
     public async Task<ActionResult> DeleteProduct([FromRoute] long id)
     {
         // Procura e validação
-        var product = await _con.Products.FindAsync(id);
+        var product = await _con.Products.FindAsync(Convert.ToInt32(id));
         if (product is null) return NotFound("Produto não encontrado");
 
         // Log
