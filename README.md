@@ -8,7 +8,7 @@ Aplicação feita para teste técnico com o tema: Vendas diversas de um brechó.
 dotnet run
 ```
 
-#Tecnologias utilizadas:
+# Tecnologias utilizadas:
 * C# .NET
 * ASP.NET
 * RESTful API
