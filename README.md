@@ -8,6 +8,13 @@ Aplicação feita para teste técnico com o tema: Vendas diversas de um brechó.
 dotnet run
 ```
 
+## Importante
+
+A porta padrão (utilizei localhost para o sistema), é http://localhost:5200 , caso na máquina em que o teste esteja sendo feito essa porta esteja em uso, pode-se modificar ela em Backend->Properties->launchSettings.json, imagem de exemplificação:
+
+![image](https://github.com/bonifacio-pedro/teste-tecnico-backend/assets/123605656/2f31e1c0-ee84-4a8a-8210-787ae4ed0bc9)
+
+
 # Tecnologias utilizadas:
 * C# .NET
 * ASP.NET
