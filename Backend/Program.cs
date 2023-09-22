@@ -56,9 +56,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Configurando cors
-app.UseCors(o => o.AllowAnyOrigin()
-                  .WithOrigins("GET", "POST", "PUT", "DELETE")
-                  .AllowAnyHeader());
+app.UseCors(c => 
+{
+        c.AllowAnyHeader();
+        c.AllowAnyMethod();
+        c.AllowAnyOrigin();
+});
 
 app.MapControllers();
 

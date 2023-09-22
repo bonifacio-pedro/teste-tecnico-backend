@@ -73,8 +73,10 @@ public class ProductsController: ControllerBase
         if (name.Name is null) return BadRequest("Envie um nome válido");
 
         // Procuramos com o método "startsWith" o produto
+        // Transformo a primeira letra em maiúscula para a pesquisa
         var products = from b in _con.Products
-                        where b.Name!.StartsWith(name.Name)
+                       where b.Name!.StartsWith(
+                        char.ToUpper(name.Name[0]) + name.Name.Substring(1))
                         select b;
 
         // Outra validação
@@ -96,6 +98,9 @@ public class ProductsController: ControllerBase
     public async Task<ActionResult> PostProduct([FromBody] Product product)
     {
         if (product is null) return BadRequest("Produto inválido para cadastro");
+
+        // Validação de primeira letra maiscula
+        product.Name = char.ToUpper(product.Name[0]) + product.Name.Substring(1);
 
         _con.Products.Add(product);
         await _con.SaveChangesAsync();
