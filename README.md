@@ -24,6 +24,7 @@ A porta padrão (utilizei localhost para o sistema), é http://localhost:5200 , 
 * Bearer JWT Authetication
 * Injestão de dependência
 * SQLite
+* Git
 
 # Especificações e extras:
 Endpoints feitos para produtos e login (autenticação JWT).
